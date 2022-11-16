@@ -68,6 +68,9 @@ a:focus {
 .icon-contacts {
   fill: currentColor;
   margin-right: 10px;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-link:hover:focus > .icon-contacts {
@@ -144,6 +147,9 @@ a:focus {
   height: 76px;
   display: inline-flex;
   align-items: center;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover,
 .link:focus {
@@ -289,6 +295,9 @@ text-transform: uppercase;
   line-height: 1.6;
   color: var(--main-color);
   background-color: var(--second-background-color);
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -365,7 +374,11 @@ text-transform: uppercase;
 
   width: 44px;
   height: 44px;
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .team-social-icon:hover {
   background-color: var(--second-color);
@@ -407,6 +420,26 @@ text-transform: uppercase;
   color: var(--light-grey);
 }
 
+.text-overlay {
+  position: absolute;
+  bottom: 26%;
+  left: 0;
+  opacity:0;
+  width: 370px;
+height: 294px;
+background-color: rgba(33, 150, 243, 0.9);
+font-weight: 400;
+font-size: 18px;
+color: var(--white-color);
+text-align: left;
+line-height: 156%;
+letter-spacing: 0.03em;
+padding-top: 63px;
+padding-bottom: 63px;
+padding-right: 24px;
+padding-left: 24px;
+}
+
 .what-we-do {
   padding-bottom: 94px;
   padding-top: 94px;
@@ -445,13 +478,24 @@ text-transform: uppercase;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .our-clients-list {
   display: flex;
   justify-content: space-between;
   column-gap: 30px;
   margin: 0;
 }
+
+.our-clients-link {
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 .our-clients-item:hover {
   border: 1px solid var(--second-color);
@@ -510,7 +554,11 @@ text-transform: uppercase;
   line-height: 1.7;
   color: var(--white-color);
   text-decoration: none;
+  transition-property:  color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .footer-link {
   font-weight: 400;
@@ -518,6 +566,9 @@ text-transform: uppercase;
   line-height: 1.7;
   color: var(--footer-link-color);
   text-decoration: none;
+  transition-property:  color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link-adress:hover,
 .footer-link-adress:focus {
@@ -551,6 +602,9 @@ text-transform: uppercase;
   width: 44px;
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon:hover {
   background-color: var(--second-color);
@@ -605,11 +659,24 @@ text-transform: uppercase;
 
 .projects-list {
   width: 370px;
+
 }
 
 .project-list-link {
   display: block;
   text-decoration: none;
+ position: relative;
+ transition-property: opacity, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-list-link:hover .text-overlay{
+opacity:1;
+}
+
+.project-list-link:focus .text-overlay{
+opacity:1;
 }
 
 .project-list-link:hover {
@@ -643,4 +710,48 @@ text-transform: uppercase;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--background-color);
+}
+
+
+.backdrop {
+  position: fixed;
+   top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+ 
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 528px;
+height: 581px;
+background-color: var(--white-color);
+
+}
+
+.close {
+  position: absolute;
+  top:0;
+  right: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+border: 1px solid rgba(0, 0, 0, 0.1);
+background-color: var(--white-color);
 }
