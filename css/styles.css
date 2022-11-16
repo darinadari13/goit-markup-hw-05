@@ -147,6 +147,12 @@ a:focus {
 .active {
   color: var(--second-color);
 }
+.link-active::after {
+  content:'';
+  display:inline-block;
+  width: auto;
+  height: auto;
+}
 
 .phone-link {
   color: var(--light-grey);
