@@ -323,13 +323,14 @@ a:focus {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  padding-bottom: 20px;
 }
 
 .team-name {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 0.8;
+  letter-spacing: 0.03em;
+
   color: var(--main-color);
   margin-bottom: 10px;
 }
@@ -344,8 +345,9 @@ a:focus {
 
 .team-profession {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
   color: var(--light-grey);
 }
 
@@ -354,6 +356,7 @@ a:focus {
   justify-content: center;
   margin: 0 auto;
   column-gap: 10px;
+  padding-top: 16px;
 }
 
 .team-social-link {
@@ -461,9 +464,9 @@ a:focus {
   margin: 0;
 }
 
-.our-clients-link {
+/* .our-clients-link {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
 .our-clients-item:hover {
   border: 1px solid var(--second-color);
@@ -627,6 +630,7 @@ a:focus {
   display: block;
   text-decoration: none;
   position: relative;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-list-link:hover .text-overlay {
@@ -738,10 +742,9 @@ a:focus {
 
 .close {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 8px;
-  margin-right: 8px;
+  top: 8px;
+  right: 8px;
+
   display: flex;
   border-radius: 50%;
   justify-content: center;
